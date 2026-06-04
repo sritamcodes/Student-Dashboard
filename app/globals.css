@@ -1,26 +1,78 @@
 @import "tailwindcss";
 
+@theme {
+  --color-background: #050508;
+  --color-foreground: #f4f4f7;
+  
+  --color-card-bg: rgba(8, 8, 12, 0.65);
+  --color-card-border: rgba(255, 255, 255, 0.05);
+  --color-card-border-hover: rgba(255, 255, 255, 0.12);
+  
+  --color-accent-primary: #6366f1;
+  --color-accent-secondary: #a855f7;
+  --color-accent-emerald: #10b981;
+  --color-accent-cyan: #06b6d4;
+  
+  --font-sans: var(--font-geist-sans), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Roboto Mono, monospace;
+}
+
+/* Glassmorphism & premium UI utility rules in Tailwind V4 */
+@utility glass {
+  background: rgba(8, 8, 12, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+@utility glass-border {
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+@utility glass-panel {
+  background: rgba(4, 4, 6, 0.4);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-right: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+@utility neon-shadow {
+  box-shadow: 0 0 40px -10px rgba(99, 102, 241, 0.25);
+}
+
+@utility neon-text-glow {
+  text-shadow: 0 0 12px rgba(99, 102, 241, 0.4);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(3, 3, 5, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 99px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+/* Core Document styling - Dark Mode Only */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  color-scheme: dark;
+  --background: #050508;
+  --foreground: #f4f4f7;
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  overflow-x: hidden;
 }
