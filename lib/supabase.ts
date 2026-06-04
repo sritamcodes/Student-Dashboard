@@ -2,7 +2,8 @@ import { createClient } from '@supabase/supabase-js';
 import { Course } from '@/types/course';
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+const supabaseAnonKey =
+  process.env.sb_publishable_eBReGWxhUkqMCWRzVSEx1w_L3H9ZCi2;
 
 // Only initialize Supabase if credentials are provided
 export const supabase = supabaseUrl && supabaseAnonKey
